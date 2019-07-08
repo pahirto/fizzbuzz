@@ -12,12 +12,14 @@ public class Main {
                 .massDelimiter("\n")
                 .displayValue(true) // display value of row
                 .displayEmpty(true) //display row also if no rules is catch
+                .sequenceGenerator(10, i -> i + 2) // this should be generic, but no time
+                        //default generator is (1, i -> i + 1)
                 //configuring own rules
                 .moduloRule(3, "fizz") // (value % 3 == 0)
                 .rule(value -> value % 5 == 0, "buzz") // general rule is for bigger complexity
                 .build();
 
-        String res = fizzBuzz.evaluate(1, 50); // continuously evaluate for seq 1..50
+        String res = fizzBuzz.evaluateSequence(20); // continuously evaluate first 20 seq items according to config
         System.out.println(res);
 
         System.out.println("-----------------");
