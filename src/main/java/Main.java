@@ -9,7 +9,7 @@ public class Main {
         FizzBuzz fizzBuzz = FizzBuzz.builder()
                 //just configuration staff for printing
                 .delimiter("-")
-                .massDelimiter("\n")
+                .massDelimiter(System.lineSeparator())
                 .displayValue(true) // display value of row
                 .displayEmpty(true) //display row also if no rules is catch
                 .sequenceGenerator(10, i -> i + 2) // this should be generic, but no time
